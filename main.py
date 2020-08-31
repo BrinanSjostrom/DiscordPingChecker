@@ -51,9 +51,10 @@ async def on_message(message):
 
 
 def main():
-	discordFile = open("discord_token.dat", "r")
+	discordFile = open("/home/ubuntu/discord_token.dat", "r")
 	token = discordFile.read()
 	discordFile.close()
 	print_m("Init token: " + token)
+	send_message(twilio_client, from_number, to_number, print_m("Initial text..."))
 	client.run(token, bot=False)
 main()
